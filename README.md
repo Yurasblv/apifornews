@@ -2,10 +2,10 @@ Project dockerized.
 Code reviewed by black, flake8, pyright. :shipit:
 
 ```
-[Deployment on heroku](https://testapinews.herokuapp.com/)
+[Deployment on heroku]
 ```
+(https://testapinews.herokuapp.com/)
 ```
-
 Steps:
 Clone repository:
 1 : git clone https://github.com/Yurasblv/apifornews.git
