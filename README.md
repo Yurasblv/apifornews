@@ -24,5 +24,5 @@ https://github.com/Yurasblv/apifornews.git
 ```
 Trying to make postman checks 
 ```
-https://www.postman.com/spaceflight-pilot-77997851/workspace/my-workspace/collection/16571220-daa0ce18-f71d-476d-8ae9-6bfec8a65677
-https://www.getpostman.com/collections/8d861b672e443ccb6410
+1. https://www.postman.com/spaceflight-pilot-77997851/workspace/my-workspace/collection/16571220-daa0ce18-f71d-476d-8ae9-6bfec8a65677
+2. https://www.getpostman.com/collections/8d861b672e443ccb6410
