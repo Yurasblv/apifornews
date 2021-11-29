@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    command: >
+      sh -c "python3 manage.py migrate &&
+             python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=db
+      - DB_USER=postgres
+      - DB_PASS=postgres
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+
+  db:
+    image: postgres:10-alpine
+    env_file:
+      - ./.env.dev
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+      image: "redis:alpine"
+
+  celery:
+    build: .
+    command: celery -A djangoProject2 worker -l INFO
+    volumes:
+        - .:/app
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+      - redis
+      - web
+volumes:
+  pgdata:
