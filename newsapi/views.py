@@ -12,6 +12,7 @@ from django.db.models import F
 
 
 class NewsListView(ListAPIView):
+    queryset = News.objects.all()
     pagination_class = Paginator
     serializer_class = NewsSerializer
 
