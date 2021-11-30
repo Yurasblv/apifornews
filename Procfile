@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn --pythonpath djangoProject2.wsgi
+web: gunicorn djangoProject2.wsgi --log-file -
