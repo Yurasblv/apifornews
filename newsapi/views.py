@@ -27,10 +27,14 @@ class NewsUpdate(UpdateAPIView):
     lookup_field = "id"
 
 
-class CommentAddView(RetrieveUpdateAPIView):
+class CommentAddView(CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     lookup_field = "id"
+
+    def post(self, request, *args, **kwargs):
+        print(request.data,args,kwargs)
+        return self.create(request, *args, **kwargs)
 
 
 class CommentDelView(RetrieveDestroyAPIView):
