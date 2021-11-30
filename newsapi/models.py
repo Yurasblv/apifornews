@@ -14,8 +14,6 @@ class News(models.Model):
 
 
 class Comment(models.Model):
-    """author-name, content, creation date"""
-
     content = models.ForeignKey(News, on_delete=models.CASCADE, related_name="comment")
     author_name = models.CharField(max_length=50, default="SOME STRING")
     text = models.TextField()
