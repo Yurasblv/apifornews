@@ -12,6 +12,7 @@ from django.db.models import F
 
 
 class NewsListView(ListAPIView):
+    queryset = News.objects.all()
     pagination_class = Paginator
     serializer_class = NewsSerializer
 
@@ -26,10 +27,11 @@ class NewsUpdate(UpdateAPIView):
     lookup_field = "id"
 
 
-class CommentAddView(RetrieveUpdateAPIView):
+class CommentAddView(CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     lookup_field = "id"
+
 
 
 class CommentDelView(RetrieveDestroyAPIView):
